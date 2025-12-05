@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Arsi — Random Video Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="brand">
+    <div class="logo">Live <span class="accent">Arsi</span></div>
+    <div class="controls">
+      <button id="btnStart" class="btn primary">Start</button>
+      <button id="btnNext" class="btn" disabled>Next</button>
+      <button id="btnStop" class="btn danger" disabled>Stop</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="videos">
+      <div class="video-col">
+        <div class="label">You</div>
+        <video id="localVideo" autoplay muted playsinline></video>
+      </div>
+      <div class="video-col">
+        <div class="label">Stranger</div>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </div>
+    </section>
+
+    <section class="chat">
+      <div id="status" class="status">Press Start to find a partner.</div>
+      <div class="chat-window" id="chatWindow"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="Say something..." autocomplete="off" />
+        <button class="btn small">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>Built with ♥ for Live Arsi — prototype</footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
